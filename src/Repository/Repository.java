@@ -4,6 +4,7 @@
  */
 package Repository;
 
+import ann.DBTable;
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 
@@ -19,9 +20,13 @@ public class Repository {
         
     }
     
-    public <O> void insert(O Object){
-        Annotation[] A = Object.getClass().getDeclaredAnnotations();
-        System.out.println(Arrays.toString(A));
+    public <O> void insert(O Object) throws Exception{
+        DBTable A = Object.getClass().getAnnotation(DBTable.class);
+        System.out.println(A);
+        
+        if(A != null){
+            String tableName = A.table();
+            System.out.println("Register at table:" + " " + tableName);
+        }
     }
-    
 }
