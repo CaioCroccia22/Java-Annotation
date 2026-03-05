@@ -8,7 +8,7 @@ package annotation;
  *
  * @author Caio
  */
-public class Annotation {
+public class App {
 
     /**
      * @param args the command line arguments
