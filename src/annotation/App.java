@@ -4,6 +4,9 @@
  */
 package annotation;
 
+import Repository.Repository;
+import domain.Products;
+
 /**
  *
  * @author Caio
@@ -14,7 +17,9 @@ public class App {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Products p1 = new Products(1, "Dipirona", 1, true);
+        Repository database = new Repository();
+        database.insert(p1);
     }
     
 }
