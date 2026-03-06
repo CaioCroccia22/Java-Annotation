@@ -9,6 +9,6 @@
   
 ## Key Concepts Used
 -I have used notions like:
-  - **Custom Annotations**: @interface
+  -**Custom Annotations**: @interface
   -**Reflections API**: Read annotations and field values
   -**Generics**: <K,V>
