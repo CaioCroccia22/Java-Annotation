@@ -5,6 +5,7 @@
 package domain;
 
 import ann.DBTable;
+import ann.DBTableColumn;
 
 /**
  *
@@ -13,9 +14,13 @@ import ann.DBTable;
 /// here I created a class to simulate an database object
 @DBTable(table="Products")
 public class Products {
+    @DBTableColumn(table="Products",column="product_id")
     private int     product_id;
+    @DBTableColumn(table="Products",column="product_name")
     private String  product_name;
+    @DBTableColumn(table="Products",column="product_count")
     private int     product_count;
+    @DBTableColumn(table="Products",column="is_active")
     private boolean is_active;
     
     public Products(

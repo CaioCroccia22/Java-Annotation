@@ -19,7 +19,11 @@ public class App {
     public static void main(String[] args) {
         Products p1 = new Products(1, "Dipirona", 1, true);
         Repository database = new Repository();
-        database.insert(p1);
+        try{
+            database.insert(p1);
+        }catch(Exception E){
+            System.out.println("Error: Can´t insert product");
+        }
     }
     
 }

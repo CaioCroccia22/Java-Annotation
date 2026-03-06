@@ -23,4 +23,6 @@ public @interface DBTable {
     public String table();
     //In this line I´m saying that my annotation will be able to receive an table name
     //Attributes of annotation can only return primitive types, String, class, enum, array
-}
+};
+
+
