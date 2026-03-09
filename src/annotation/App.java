@@ -18,7 +18,7 @@ public class App {
      */
     public static void main(String[] args) {
         Products p1 = new Products(1, "Dipirona", 1, true);
-        Repository database = new Repository();
+        Repository<String, String> database = new Repository<>();
         try{
             database.insert(p1);
         }catch(Exception E){

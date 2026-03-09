@@ -39,7 +39,9 @@ public class Repository<K,V> {
     
     public <O> void InsertValue(O Object, String tableName){
         Set<K> row = null;
-        Field[] Fields = Object.getClass().getFields();
+        Field[] Fields = Object.getClass().getDeclaredFields();
+        System.out.print("Insert into: "+ " " 
+                            + tableName + " Table" + "\n"); 
         for(Field field:Fields){
             DBTableColumn column    = field.getAnnotation(DBTableColumn.class);
             
@@ -50,8 +52,7 @@ public class Repository<K,V> {
                 field.setAccessible(true); // we need to do that to hang with IllegalAcessException
                 try{
                     Table.put((K) columnName, (V) field.get(Object).toString());
-                    System.out.print("Insert into: "+ " " 
-                            + tableName + "Colum:" + columnName + "Value:" + Table.get((K) columnName));
+                    System.out.print("Colum: " + columnName + "\n" +"Value: " + Table.get((K) columnName)+ "\n");
                 }catch(IllegalAccessException E){
                     System.out.print("There isnt any column to this attribute");
                 }
